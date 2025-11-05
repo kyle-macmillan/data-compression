@@ -1,3 +1,5 @@
+open Base
+
 let encode_letter letter =
   match letter with
   | 'A' -> "0"
@@ -6,5 +8,5 @@ let encode_letter letter =
   | 'D' -> "111"
   | _ -> ""
 
-let compress word = Core.String.concat_map word ~f:encode_letter
+let compress word = String.concat_map word ~f:encode_letter
 
