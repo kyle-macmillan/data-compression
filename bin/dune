@@ -1,0 +1,4 @@
+(executable
+ (public_name data-compression)
+ (name main)
+ (libraries data_compression base stdio core))

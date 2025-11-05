@@ -1,0 +1,24 @@
+# OCaml build artifacts
+_build/
+*.cmi
+*.cmo
+*.cmx
+*.o
+*.a
+*.so
+*.dll
+*.cmxs
+*.cma
+*.cmt
+*.cmti
+*.annot
+*.depend
+*.dune-workspace
+*.install
+*.merlin
+*.mli.depends
+*.ml.depends
+
+# Opam-related files
+_opam/
+.merlin_cache/

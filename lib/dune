@@ -1,0 +1,3 @@
+(library
+ (name data_compression)
+ (libraries stdio base core))

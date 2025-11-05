@@ -1,0 +1,1 @@
+val compress : string -> string
