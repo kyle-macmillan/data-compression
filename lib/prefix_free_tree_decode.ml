@@ -2,9 +2,9 @@ open Core
 
 type 'a tree = Leaf of 'a | Node of 'a tree * 'a tree
 
-let t1 = Node (Leaf "A", Node (Leaf "B", Node (Leaf "C", Leaf "D")))
 
-let decompress word tree =
+let decompress word =
+  let tree = Node (Leaf "A", Node (Leaf "B", Node (Leaf "C", Leaf "D"))) in
   let rec decode (encoding : char list) (subtree : 'a tree) =
     match subtree with
     | Leaf v -> (
