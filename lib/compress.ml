@@ -20,6 +20,20 @@ let%test_module "Mirror Tests" = (module struct
     let decoded = decompress ~alg encoded in
     String.equal word decoded
 
+  let rec generate_rnd_msg (length: int) =
+    if length = 0 then ""
+    else match Random.int 4 with
+    | 0 -> "A" ^ generate_rnd_msg (length - 1)
+    | 1 -> "B" ^ generate_rnd_msg (length - 1)
+    | 2 -> "C" ^ generate_rnd_msg (length - 1)
+    | _ -> "D" ^ generate_rnd_msg (length - 1)
+
+  let%test "Prefix free naive random" =
+    run_mirror_test ~alg:Prefix_free_naive (generate_rnd_msg 20)
+
+  let%test "Prefix free tree random" =
+    run_mirror_test ~alg:Prefix_free_tree (generate_rnd_msg 20)
+
   let%test "Prefix free naive mirror" = 
     run_mirror_test ~alg:Prefix_free_naive "ABCD"
 
