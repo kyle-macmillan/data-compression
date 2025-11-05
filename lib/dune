@@ -1,6 +1,6 @@
 (library
  (name data_compression)
  (public_name data-compression)
- (libraries base ppx_inline_test core)
+ (libraries base ppx_inline_test)
  (inline_tests)
  (preprocess (pps ppx_inline_test)))

@@ -1,3 +1,5 @@
+open Base
+
 type algorithm = 
 | Prefix_free_tree
 | Prefix_free_naive
